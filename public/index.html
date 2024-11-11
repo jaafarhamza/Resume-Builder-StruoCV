@@ -4,95 +4,896 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./css/tailwind.css" rel="stylesheet" />
-    <title>Document</title>
+    <title>Builder-StruCv</title>
   </head>
-  <body>
-    <main class="bg-slate-700 w-full min-h-screen">
-      <nav class="bg-white border-gray-200 dark:bg-gray-900 text-red-400">
-        <div
-          class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a
-            href="./index.html"
-            class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="./CV1-removebg-preview.png" class="h-10" alt="CVbuild" />
-            <span
-              class="self-center text-2xl whitespace-nowrap dark:text-white">
-              <span class="font-bold text-blue-800">CV</span>build
-            </span>
-          </a>
 
-          <!-- Toggle Button -->
-          <button
-            id="toggle-button"
-            type="button"
-            class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-controls="navbar-default"
-            aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <!-- Icon for the button -->
-            <svg
-              class="w-6 h-6"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                fill-rule="evenodd"
-                d="M3 5h14a1 1 0 010 2H3a1 1 0 010-2zm0 6h14a1 1 0 010 2H3a1 1 0 010-2zm0 6h14a1 1 0 010 2H3a1 1 0 010-2z"
-                clip-rule="evenodd"></path>
-            </svg>
-          </button>
+  <body
+    class="bg-[rgb(2,0,36)] bg-[linear-gradient(90deg,_rgba(2,0,36,1)_0%,_rgba(33,68,148,1)_100%,_rgba(0,212,255,1)_100%)]">
+    <!-- nav -->
+    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a
+          href="./index.html"
+          class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="./CV1-removebg-preview.png" class="h-10" alt="CVbuild" />
+          <span class="self-center text-2xl whitespace-nowrap dark:text-white">
+            <span class="font-bold text-blue-800">CV</span>build
+          </span>
+        </a>
 
-          <!-- Navbar Links -->
-          <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-            <ul
-              class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-              <li>
-                <a
-                  href="./index.html"
-                  class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
-                  aria-current="page"
-                  >Home</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                  >About</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                  >Services</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                  >Pricing</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                  >Contact</a
-                >
-              </li>
-            </ul>
+        <button
+          id="toggle"
+          type="button"
+          class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="navbar-default"
+          aria-expanded="false">
+          <span class="sr-only"> menu</span>
+
+          <svg
+            class="w-6 h-6"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              fill-rule="evenodd"
+              d="M3 5h14a1 1 0 010 2H3a1 1 0 010-2zm0 6h14a1 1 0 010 2H3a1 1 0 010-2zm0 6h14a1 1 0 010 2H3a1 1 0 010-2z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+
+        <div class="hidden w-full md:block md:w-auto" id="navbar">
+          <ul
+            class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <li>
+              <a
+                href="./index.html"
+                class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >Pricing</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section>
+      <!-- tittle -->
+
+      <div class="flex justify-center">
+        <h1
+          class="text-6xl mt-12 p-5 font-bold rounded-3xl shadow-transparent shadow-2xl text-white">
+          Builer Struo<span class="text-blue-600">CV</span>
+        </h1>
+      </div>
+    </section>
+
+    <!-- structure -->
+
+    <section
+      class="flex items-center mt-28 justify-between gap-10 flex-wrap sm:justify-center sm:items-center mb-20">
+      <!-- progress -->
+
+      <div class="flex items-center justify-start ml-10">
+        <div class="flex flex-col items-start space-y-6">
+          <!-- Step 1 -->
+          <div class="flex items-center space-x-3">
+            <div class="relative">
+              <div 
+                class="flex items-center justify-center w-8 h-8 rounded-full bg-orange-500 text-white font-semibold">
+                1
+              </div>
+              <div
+                class="absolute top-8 left-4 w-px h-8 bg-dotted border-l-2 border-gray-300"></div>
+            </div>
+            <span class="text-white font-medium"
+              >Informations personnelles</span
+            >
+          </div>
+          <!-- Step 2 -->
+          <div class="flex items-center space-x-3">
+            <div class="relative">
+              <div
+                class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
+                2
+              </div>
+              <div
+                class="absolute top-8 left-4 w-px h-8 bg-dotted border-l-2 border-gray-300"></div>
+            </div>
+            <span class="text-white font-medium">Détails professionnels</span>
+          </div>
+          <!-- Step 3 -->
+          <div class="flex items-center space-x-3">
+            <div class="relative">
+              <div
+                class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
+                3
+              </div>
+              <div
+                class="absolute top-8 left-4 w-px h-8 bg-dotted border-l-2 border-gray-300"></div>
+            </div>
+            <span class="text-white font-medium"
+              >Compétences techniques et soft skills</span
+            >
+          </div>
+          <!-- Step 4 -->
+          <div class="flex items-center space-x-3">
+            <div class="relative">
+              <div
+                class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
+                4
+              </div>
+              <div
+                class="absolute top-8 left-4 w-px h-8 bg-dotted border-l-2 border-gray-300"></div>
+            </div>
+            <span class="text-white font-medium">Langues</span>
+          </div>
+          <!-- Step 5 -->
+          <div class="flex items-center space-x-3">
+            <div class="relative">
+              <div
+                class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
+                5
+              </div>
+              <div
+                class="absolute top-8 left-4 w-px h-6 bg-dotted border-l-2 border-gray-300"></div>
+            </div>
+            <span class="text-white font-medium">Loisirs et intérêts</span>
+          </div>
+          <!-- Step 6 -->
+          <div class="flex items-center space-x-3">
+            <div class="relative">
+              <div
+                class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
+                5
+              </div>
+              <div
+                class="absolute top-8 left-4 w-px h-6 bg-dotted border-l-2 border-gray-300"></div>
+            </div>
+
+            <span class="text-white font-medium">Cursus universitaire</span>
+          </div>
+          <!-- step 7 -->
+          <div class="flex items-center space-x-3">
+            <div class="relative">
+              <div
+                class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
+                7
+              </div>
+              <div
+                class="absolute top-8 left-4 w-px h-6 bg-dotted border-l-2 border-gray-300"></div>
+            </div>
+            <span class="text-white font-medium"
+              >Expériences professionnelles</span
+            >
+          </div>
+          <!-- step 8 -->
+          <div class="flex items-center space-x-3">
+            <div
+              class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
+              8
+            </div>
+            <span class="text-white font-medium">Certifications</span>
           </div>
         </div>
-      </nav>
+      </div>
 
-      <section>
-        <div class="flex justify-center">
-          <h1>Builer Struo<span class="font-bold text-white">CV</span></h1>
+      <!-- les etapes de CV -->
+
+      <div
+        class="bg-gray-50 place-items-center rounded-2xl shadow-2xl shadow-blue-600 mr-20  w-2/3">
+        <!-- etape 1     Informations personnelles-->
+
+        <div class="format p-8 bg-gray-50 w-4/5 block">
+          <form class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-700 mb-4">
+              Personal Information
+            </h2>
+
+            <div class="flex justify-between flex-wrap">
+              <div>
+                <label class="block text-sm font-medium text-gray-700"
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  name="fullName"
+                  placeholder="full name"
+                  class="mt-1 border border-gray-300 rounded-lg p-2 focus:outline-none focus:border-blue-500" />
+              </div>
+
+              <div class="flex justify-center items-center gap-7">
+                <label class="block text-sm font-medium text-gray-700"
+                  >Profile Photo</label
+                >
+                <label
+                  for="profilePhoto"
+                  class="flex items-center justify-center mt-2 w-32 h-32 border border-gray-300 rounded-full overflow-hidden cursor-pointer">
+                  <img
+                    src=""
+                    alt=""
+                    class="object-cover w-full h-full hidden"
+                    id="profileImage" />
+                  <span id="Text" class="text-gray-400">Click to upload</span>
+                </label>
+                <input
+                  type="file"
+                  id="profilePhoto"
+                  class="hidden"
+                  accept="image/*"
+                  onchange="ProfilePhoto()" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700"
+                >Email</label
+              >
+              <input
+                type="email"
+                name="email"
+                placeholder="user@example.com"
+                class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700"
+                >Phone</label
+              >
+              <input
+                type="tel"
+                name="phone"
+                placeholder="+123 456 7890"
+                class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700"
+                >Address</label
+              >
+              <input
+                type="text"
+                name="address"
+                placeholder="123 St, City, Country"
+                class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+            </div>
+
+            <div id="socialMedia" class="space-y-4">
+              <h3 class="text-lg font-semibold text-gray-700">
+                Social Media
+              </h3>
+
+              <div
+                class="social-media-entry bg-gray-100 p-4 rounded-lg space-y-2">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700"
+                    >Social Media Name</label
+                  >
+                  <input
+                    type="text"
+                    name="socialMediaName[]"
+                    placeholder="LinkedIn"
+                    class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700"
+                    >Social Media Link</label
+                  >
+                  <input
+                    type="url"
+                    name="socialMediaLink[]"
+                    placeholder="https://linkedin.com/in/username"
+                    class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+                </div>
+                <button
+                  type="button"
+                  class="text-red-500 hover:text-red-700"
+                  onclick="removeSocialMedia(this)">
+                  Remove
+                </button>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onclick="addSocialMedia()"
+              class="bg-green-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-green-600 focus:outline-none w-full">
+              Add a Social Media Link
+            </button>
+
+            <div class="mt-6 flex justify-center">
+              <button
+                onclick="slide()"
+                type="button"
+                class="w-1/5 bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none">
+                Continue
+              </button>
+            </div>
+          </form>
         </div>
-      </section>
-    </main>
+
+        <!-- etape 2    Détails professionnels-->
+
+        <div class="format p-8 bg-gray-50 w-4/5 hidden">
+          <form class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-700 mb-4">
+              Informations personnelles
+            </h2>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700"
+                >Job Title</label
+              >
+              <input
+                type="text"
+                name="jobTitle"
+                placeholder="dev full stack"
+                class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+            </div>
+
+            <!-- Profile -->
+            <div>
+              <label class="block text-sm font-medium text-gray-700"
+                >Profile</label
+              >
+              <textarea
+                name="profile"
+                placeholder="Brief summary of your professional experience and skills..."
+                rows="4"
+                class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500"></textarea>
+            </div>
+
+            <div class="flex justify-between">
+              <div class="mt-6">
+                <button
+                  type="button"
+                  onclick="reSlide()"
+                  class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none">
+                  previous
+                </button>
+              </div>
+
+              <div class="mt-6">
+                <button
+                  onclick="slide()"
+                  type="button"
+                  class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none">
+                  Continue
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- etape 3    Compétences techniques et soft skills-->
+
+        <div class="format p-8 bg-gray-50 w-4/5 hidden">
+          <form id="skillsForm" class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-700 mb-4">Compétences techniques et soft skills</h2>
+
+            <div id="technicalSkills" class="space-y-4">
+              <h3 class="text-lg font-semibold text-gray-700">
+                Technical Skills
+              </h3>
+              
+              <div class="technical-skill-entry flex items-center space-x-2">
+                <input
+                  type="text"
+                  name="technicalSkills[]"
+                  placeholder="JavaScript"
+                  class="border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+                <button
+                  type="button"
+                  class="text-red-500 hover:text-red-700"
+                  onclick="removeSkillField(this)">
+                  Remove
+                </button>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onclick="addTechnicalSkill()"
+              class="bg-green-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-green-600 focus:outline-none w-full">
+              Add a Technical Skill
+            </button>
+
+            <div id="softSkills" class="space-y-4 mt-8">
+              <h3 class="text-lg font-semibold text-gray-700">Soft Skills</h3>
+
+              <div class="soft-skill-entry flex items-center space-x-2">
+                <input
+                  type="text"
+                  name="softSkills[]"
+                  placeholder="Communication"
+                  class="border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+                <button
+                  type="button"
+                  class="text-red-500 hover:text-red-700"
+                  onclick="removeSkill(this)">
+                  Remove
+                </button>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onclick="addSoftSkill()"
+              class="bg-green-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-green-600 focus:outline-none w-full">
+              Add a Soft Skill
+            </button>
+
+            <div class="flex justify-between">
+              <div class="mt-6">
+                <button
+                  type="button"
+                  onclick="reSlide()"
+                  class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none">
+                  previous
+                </button>
+              </div>
+
+              <div class="mt-6">
+                <button
+                  onclick="slide()"
+                  type="button"
+                  class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none">
+                  Continue
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- etape 4      Langues-->
+
+        <div class="format p-8 bg-gray-50 w-4/5 hidden">
+          <form id="languagesForm" class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-700 mb-4">Langues</h2>
+
+            <div id="languages" class="space-y-4">
+              <h3 class="text-lg font-semibold text-gray-700">
+                Languages
+              </h3>
+
+              <div class="language-entry flex items-center space-x-2">
+
+                <input
+                  type="text"
+                  name="languages[]"
+                  placeholder="French"
+                  class="border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+
+                <select
+                  name="proficiency[]"
+                  class="border border-gray-300 rounded-lg p-2 focus:outline-none focus:border-blue-500">
+                  <option value="" disabled selected>Proficiency Level</option>
+                  <option value="Beginner">Beginner</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Advanced">Advanced</option>
+                </select>
+
+                <button
+                  type="button"
+                  class="text-red-500 hover:text-red-700"
+                  onclick="removeLanguage(this)">
+                  Remove
+                </button>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onclick="addLanguage()"
+              class="bg-green-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-green-600 focus:outline-none w-full">
+              Add a Language
+            </button>
+
+            <div class="flex justify-between">
+              <div class="mt-6">
+                <button
+                  type="button"
+                  onclick="reSlide()"
+                  class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none">
+                  previous
+                </button>
+              </div>
+
+              <div class="mt-6">
+                <button
+                  onclick="slide()"
+                  type="button"
+                  class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none">
+                  Continue
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- etape 5     Loisirs et intérêts -->
+
+        <div class="format p-8 bg-gray-50 w-4/5 hidden">
+          <form id="hobbiesForm" class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-700 mb-4">
+              Loisirs et intérêts
+            </h2>
+
+            <div id="hobbies" class="space-y-4">
+              <h3 class="text-lg font-semibold text-gray-700">
+                Loisirs et intérêts
+              </h3>
+
+              <div class="hobby-entry flex items-center space-x-2">
+                <input
+                  type="text"
+                  name="hobbies[]"
+                  placeholder="Reading"
+                  class="border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+                <button
+                  type="button"
+                  class="text-red-500 hover:text-red-700"
+                  onclick="removeHobby(this)">
+                  Remove
+                </button>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onclick="addHobby()"
+              class="bg-green-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-green-600 focus:outline-none w-full">
+              Add a Hobby
+            </button>
+
+            <!-- Submit Button -->
+            <div class="flex justify-between">
+              <div class="mt-6">
+                <button
+                  type="button"
+                  onclick="reSlide()"
+                  class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none">
+                  previous
+                </button>
+              </div>
+
+              <div class="mt-6">
+                <button
+                  onclick="slide()"
+                  type="button"
+                  class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none">
+                  Continue
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- etape 6   Cursus universitaire-->
+
+        <div class="format p-8 bg-gray-50 w-4/5 hidden">
+          <form id="educationForm" class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-700 mb-4">
+              Cursus universitaire
+            </h2>
+
+            <div id="education" class="space-y-6">
+              <h3 class="text-lg font-semibold text-gray-700">
+                Academic Background
+              </h3>
+
+              <div class="academic-entry bg-gray-100 p-4 rounded-lg space-y-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700"
+                    >Degree Name</label
+                  >
+                  <input
+                    type="text"
+                    name="degree[]"
+                    placeholder="Bachelor of Science"
+                    class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+                </div>
+                
+                <div>
+                  <label class="block text-sm font-medium text-gray-700"
+                    >University Name</label
+                  >
+                  <input
+                    type="text"
+                    name="university[]"
+                    placeholder="University of Example"
+                    class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700"
+                    >Field of Study</label
+                  >
+                  <input
+                    type="text"
+                    name="fieldOfStudy[]"
+                    placeholder="Computer Science"
+                    class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700"
+                      >Start Year</label
+                    >
+                    <input
+                      type="number"
+                      name="startYear[]"
+                      placeholder="2018"
+                      class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700"
+                      >End Year</label
+                    >
+                    <input
+                      type="number"
+                      name="endYear[]"
+                      placeholder="2022"
+                      class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  class="text-red-500 hover:text-red-700 mt-2"
+                  onclick="removeEducation(this)">
+                  Remove
+                </button>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onclick="addEducation()"
+              class="bg-green-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-green-600 focus:outline-none w-full">
+              Add a Academic Entry
+            </button>
+
+            <div class="flex justify-between">
+              <div class="mt-6">
+                <button
+                  type="button"
+                  onclick="reSlide()"
+                  class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none">
+                  previous
+                </button>
+              </div>
+
+              <div class="mt-6">
+                <button
+                  onclick="slide()"
+                  type="button"
+                  class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none">
+                  Continue
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- etap 7    Expériences professionnelles-->
+
+        <div class="format p-8 bg-gray-50 w-4/5 hidden">
+          <form id="experienceForm" class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-700 mb-4">
+              Expériences professionnelles
+            </h2>
+
+            <div id="experience" class="space-y-6">
+              <h3 class="text-lg font-semibold text-gray-700">
+                Job Experience
+              </h3>
+
+              <div class="job-entry bg-gray-100 p-4 rounded-lg space-y-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700"
+                    >Job Title</label
+                  >
+                  <input
+                    type="text"
+                    name="jobTitle[]"
+                    placeholder="Software Engineer"
+                    class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700"
+                    >Company Name</label
+                  >
+                  <input
+                    type="text"
+                    name="company[]"
+                    placeholder="Example Inc."
+                    class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700"
+                    >Location</label
+                  >
+                  <input
+                    type="text"
+                    name="location[]"
+                    placeholder="New York, USA"
+                    class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700"
+                      >Start Date</label
+                    >
+                    <input
+                      type="month"
+                      name="startDate[]"
+                      class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700"
+                      >End Date</label
+                    >
+                    <input
+                      type="month"
+                      name="endDate[]"
+                      class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700"
+                    >Job Description</label
+                  >
+                  <textarea
+                    name="jobDescription[]"
+                    placeholder="Describe your responsibilities and achievements..."
+                    rows="3"
+                    class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500"></textarea>
+                </div>
+
+                <button
+                  type="button"
+                  class="text-red-500 hover:text-red-700 mt-2"
+                  onclick="removeJob(this)">
+                  Remove
+                </button>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onclick="addJob()"
+              class="bg-green-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-green-600 focus:outline-none w-full">
+              Add a Job Entry
+            </button>
+
+            <div class="flex justify-between">
+              <div class="mt-6">
+                <button
+                  type="button"
+                  onclick="reSlide()"
+                  class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none">
+                  previous
+                </button>
+              </div>
+
+              <div class="mt-6">
+                <button
+                  onclick="slide()"
+                  type="button"
+                  class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none">
+                  Continue
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- etape 8 -->
+
+        <div class="format p-8 bg-gray-50 w-4/5 hidden">
+          <form id="certificationsForm" class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-700 mb-4">
+              Certifications
+            </h2>
+
+            <div id="certifications" class="space-y-6">
+              <h3 class="text-lg font-semibold text-gray-700">
+                Certification List
+              </h3>
+
+              <div
+                class="certification-entry bg-gray-100 p-4 rounded-lg space-y-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700"
+                    >Certification Name</label
+                  >
+                  <input
+                    type="text"
+                    name="certificationName[]"
+                    placeholder="Google Analytics Certification"
+                    class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500"
+                    required />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700"
+                    >Certification Link</label
+                  >
+                  <input
+                    type="url"
+                    name="certificationLink[]"
+                    placeholder="https://www.example.com/certification"
+                    class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500"
+                    required />
+                </div>
+                <button
+                  type="button"
+                  class="text-red-500 hover:text-red-700 mt-2"
+                  onclick="removeCertification(this)">
+                  Remove
+                </button>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onclick="addCertification()"
+              class="bg-green-500 text-white font-semibold py-2 px-4 rounded hover:bg-green-600 focus:outline-none w-full">
+              Add a Certification
+            </button>
+
+            <div class="flex justify-between">
+              <div class="mt-6">
+                <button
+                  type="button"
+                  onclick="reSlide()"
+                  class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none">
+                  previous
+                </button>
+              </div>
+
+              <div class="mt-6">
+                <button
+                  type="button"
+                  class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none">
+                  Get your CV
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
     <script src="./dev.Js"></script>
   </body>
 </html>
