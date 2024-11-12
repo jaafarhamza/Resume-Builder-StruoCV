@@ -106,24 +106,24 @@
       <div class="flex items-center justify-start ml-10">
         <div class="flex flex-col items-start space-y-6">
           <!-- Step 1 -->
-          <div class="flex items-center space-x-3">
+          <div  class="flex items-center space-x-3 cursor-pointer">
             <div class="relative">
               <div 
-                class="flex items-center justify-center w-8 h-8 rounded-full bg-orange-500 text-white font-semibold">
+                class="step flex items-center justify-center w-8 h-8 rounded-full bg-orange-500 text-white font-semibold">
                 1
               </div>
               <div
                 class="absolute top-8 left-4 w-px h-8 bg-dotted border-l-2 border-gray-300"></div>
             </div>
-            <span class="text-white font-medium"
+            <span class=" text-white font-medium"
               >Informations personnelles</span
             >
           </div>
           <!-- Step 2 -->
-          <div class="flex items-center space-x-3">
+          <div class="flex items-center space-x-3 cursor-pointer">
             <div class="relative">
               <div
-                class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
+                class="step flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
                 2
               </div>
               <div
@@ -132,10 +132,10 @@
             <span class="text-white font-medium">Détails professionnels</span>
           </div>
           <!-- Step 3 -->
-          <div class="flex items-center space-x-3">
+          <div  class="flex items-center space-x-3 cursor-pointer">
             <div class="relative">
               <div
-                class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
+                class="step flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
                 3
               </div>
               <div
@@ -146,10 +146,10 @@
             >
           </div>
           <!-- Step 4 -->
-          <div class="flex items-center space-x-3">
+          <div  class="flex items-center space-x-3 cursor-pointer">
             <div class="relative">
               <div
-                class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
+                class="step flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
                 4
               </div>
               <div
@@ -158,10 +158,10 @@
             <span class="text-white font-medium">Langues</span>
           </div>
           <!-- Step 5 -->
-          <div class="flex items-center space-x-3">
+          <div class="flex items-center space-x-3 cursor-pointer">
             <div class="relative">
               <div
-                class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
+                class="step flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
                 5
               </div>
               <div
@@ -170,10 +170,10 @@
             <span class="text-white font-medium">Loisirs et intérêts</span>
           </div>
           <!-- Step 6 -->
-          <div class="flex items-center space-x-3">
+          <div class="flex items-center space-x-3 cursor-pointer">
             <div class="relative">
               <div
-                class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
+                class="step flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
                 5
               </div>
               <div
@@ -183,10 +183,10 @@
             <span class="text-white font-medium">Cursus universitaire</span>
           </div>
           <!-- step 7 -->
-          <div class="flex items-center space-x-3">
+          <div id="step" class="flex items-center space-x-3 cursor-pointer">
             <div class="relative">
               <div
-                class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
+                class="step flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
                 7
               </div>
               <div
@@ -197,7 +197,7 @@
             >
           </div>
           <!-- step 8 -->
-          <div class="flex items-center space-x-3">
+          <div id="step" class="flex items-center space-x-3 cursor-pointer">
             <div
               class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
               8
@@ -210,21 +210,22 @@
       <!-- les etapes de CV -->
 
       <div
-        class="bg-gray-50 place-items-center rounded-2xl shadow-2xl shadow-blue-600 mr-20  w-2/3">
+        class="bg-gray-50 place-items-center rounded-2xl shadow-2xl shadow-blue-600 flex justify-center w-full sm:w-2/3">
         <!-- etape 1     Informations personnelles-->
 
-        <div class="format p-8 bg-gray-50 w-4/5 block">
+        <div id="format1" class="format p-8 bg-gray-50 w-4/5 block">
           <form class="space-y-6">
             <h2 class="text-2xl font-bold text-gray-700 mb-4">
               Personal Information
             </h2>
 
-            <div class="flex justify-between flex-wrap">
+            <div class="flex justify-between flex-wrap items-center">
               <div>
                 <label class="block text-sm font-medium text-gray-700"
                   >Full Name</label
                 >
                 <input
+                id="name"
                   type="text"
                   name="fullName"
                   placeholder="full name"
@@ -288,9 +289,7 @@
             </div>
 
             <div id="socialMedia" class="space-y-4">
-              <h3 class="text-lg font-semibold text-gray-700">
-                Social Media
-              </h3>
+              <h3 class="text-lg font-semibold text-gray-700">Social Media</h3>
 
               <div
                 class="social-media-entry bg-gray-100 p-4 rounded-lg space-y-2">
@@ -318,7 +317,15 @@
                   type="button"
                   class="text-red-500 hover:text-red-700"
                   onclick="removeSocialMedia(this)">
-                  Remove
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#ff0000">
+                    <path
+                      d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
+                  </svg>
                 </button>
               </div>
             </div>
@@ -398,13 +405,15 @@
 
         <div class="format p-8 bg-gray-50 w-4/5 hidden">
           <form id="skillsForm" class="space-y-6">
-            <h2 class="text-2xl font-bold text-gray-700 mb-4">Compétences techniques et soft skills</h2>
+            <h2 class="text-2xl font-bold text-gray-700 mb-4">
+              Compétences techniques et soft skills
+            </h2>
 
             <div id="technicalSkills" class="space-y-4">
               <h3 class="text-lg font-semibold text-gray-700">
                 Technical Skills
               </h3>
-              
+
               <div class="technical-skill-entry flex items-center space-x-2">
                 <input
                   type="text"
@@ -415,7 +424,15 @@
                   type="button"
                   class="text-red-500 hover:text-red-700"
                   onclick="removeSkillField(this)">
-                  Remove
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#ff0000">
+                    <path
+                      d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
+                  </svg>
                 </button>
               </div>
             </div>
@@ -440,7 +457,15 @@
                   type="button"
                   class="text-red-500 hover:text-red-700"
                   onclick="removeSkill(this)">
-                  Remove
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#ff0000">
+                    <path
+                      d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
+                  </svg>
                 </button>
               </div>
             </div>
@@ -481,12 +506,9 @@
             <h2 class="text-2xl font-bold text-gray-700 mb-4">Langues</h2>
 
             <div id="languages" class="space-y-4">
-              <h3 class="text-lg font-semibold text-gray-700">
-                Languages
-              </h3>
+              <h3 class="text-lg font-semibold text-gray-700">Languages</h3>
 
               <div class="language-entry flex items-center space-x-2">
-
                 <input
                   type="text"
                   name="languages[]"
@@ -506,7 +528,15 @@
                   type="button"
                   class="text-red-500 hover:text-red-700"
                   onclick="removeLanguage(this)">
-                  Remove
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#ff0000">
+                    <path
+                      d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
+                  </svg>
                 </button>
               </div>
             </div>
@@ -563,7 +593,15 @@
                   type="button"
                   class="text-red-500 hover:text-red-700"
                   onclick="removeHobby(this)">
-                  Remove
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#ff0000">
+                    <path
+                      d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
+                  </svg>
                 </button>
               </div>
             </div>
@@ -622,7 +660,7 @@
                     placeholder="Bachelor of Science"
                     class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
                 </div>
-                
+
                 <div>
                   <label class="block text-sm font-medium text-gray-700"
                     >University Name</label
@@ -669,7 +707,15 @@
                   type="button"
                   class="text-red-500 hover:text-red-700 mt-2"
                   onclick="removeEducation(this)">
-                  Remove
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#ff0000">
+                    <path
+                      d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
+                  </svg>
                 </button>
               </div>
             </div>
@@ -784,7 +830,15 @@
                   type="button"
                   class="text-red-500 hover:text-red-700 mt-2"
                   onclick="removeJob(this)">
-                  Remove
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#ff0000">
+                    <path
+                      d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
+                  </svg>
                 </button>
               </div>
             </div>
@@ -859,7 +913,15 @@
                   type="button"
                   class="text-red-500 hover:text-red-700 mt-2"
                   onclick="removeCertification(this)">
-                  Remove
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#ff0000">
+                    <path
+                      d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
+                  </svg>
                 </button>
               </div>
             </div>
