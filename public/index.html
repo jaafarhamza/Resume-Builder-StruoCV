@@ -109,7 +109,7 @@
           <div  class="flex items-center space-x-3 cursor-pointer">
             <div class="relative">
               <div 
-                class="step flex items-center justify-center w-8 h-8 rounded-full bg-orange-500 text-white font-semibold">
+                class="step flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
                 1
               </div>
               <div
@@ -174,7 +174,7 @@
             <div class="relative">
               <div
                 class="step flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
-                5
+                6
               </div>
               <div
                 class="absolute top-8 left-4 w-px h-6 bg-dotted border-l-2 border-gray-300"></div>
@@ -199,7 +199,7 @@
           <!-- step 8 -->
           <div id="step" class="flex items-center space-x-3 cursor-pointer">
             <div
-              class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
+              class="step flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
               8
             </div>
             <span class="text-white font-medium">Certifications</span>
@@ -216,7 +216,7 @@
         <div id="format1" class="format p-8 bg-gray-50 w-4/5 block">
           <form class="space-y-6">
             <h2 class="text-2xl font-bold text-gray-700 mb-4">
-              Personal Information
+              Informations personnelles
             </h2>
 
             <div class="flex justify-between flex-wrap items-center">
@@ -230,7 +230,9 @@
                   name="fullName"
                   placeholder="full name"
                   class="mt-1 border border-gray-300 rounded-lg p-2 focus:outline-none focus:border-blue-500" />
+                  <p id="errorInputName" class="text-red-500 text-sm hidden">Please fill in a valid name.</p>
               </div>
+              
 
               <div class="flex justify-center items-center gap-7">
                 <label class="block text-sm font-medium text-gray-700"
@@ -260,10 +262,12 @@
                 >Email</label
               >
               <input
+              id="email"
                 type="email"
                 name="email"
                 placeholder="user@example.com"
                 class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+                <p id="errorInputEmail" class="text-red-500 text-sm hidden">Please fill in a valid Email.</p>
             </div>
 
             <div>
@@ -271,10 +275,12 @@
                 >Phone</label
               >
               <input
+              id="phone"
                 type="tel"
                 name="phone"
                 placeholder="+123 456 7890"
                 class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+                <p id="errorInputPhone" class="text-red-500 text-sm hidden">Please fill in a valid phone.</p>
             </div>
 
             <div>
@@ -298,35 +304,26 @@
                     >Social Media Name</label
                   >
                   <input
+                  id="socialMediaName"
                     type="text"
                     name="socialMediaName[]"
                     placeholder="LinkedIn"
                     class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+                    <p id="errorLinkName" class="text-red-500 text-sm hidden">Please Saisie Email name.</p>
                 </div>
                 <div>
                   <label class="block text-sm font-medium text-gray-700"
                     >Social Media Link</label
                   >
                   <input
+                  id="link"
                     type="url"
                     name="socialMediaLink[]"
                     placeholder="https://linkedin.com/in/username"
                     class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+                    <p id="errorInputLink" class="text-red-500 text-sm hidden">Please fill in a valid Link.</p>
                 </div>
-                <button
-                  type="button"
-                  class="text-red-500 hover:text-red-700"
-                  onclick="removeSocialMedia(this)">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="24px"
-                    viewBox="0 -960 960 960"
-                    width="24px"
-                    fill="#ff0000">
-                    <path
-                      d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
-                  </svg>
-                </button>
+                
               </div>
             </div>
 
@@ -353,7 +350,7 @@
         <div class="format p-8 bg-gray-50 w-4/5 hidden">
           <form class="space-y-6">
             <h2 class="text-2xl font-bold text-gray-700 mb-4">
-              Informations personnelles
+              Détails professionnels
             </h2>
 
             <div>
@@ -420,20 +417,6 @@
                   name="technicalSkills[]"
                   placeholder="JavaScript"
                   class="border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
-                <button
-                  type="button"
-                  class="text-red-500 hover:text-red-700"
-                  onclick="removeSkillField(this)">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="24px"
-                    viewBox="0 -960 960 960"
-                    width="24px"
-                    fill="#ff0000">
-                    <path
-                      d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
-                  </svg>
-                </button>
               </div>
             </div>
 
@@ -453,20 +436,6 @@
                   name="softSkills[]"
                   placeholder="Communication"
                   class="border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
-                <button
-                  type="button"
-                  class="text-red-500 hover:text-red-700"
-                  onclick="removeSkill(this)">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="24px"
-                    viewBox="0 -960 960 960"
-                    width="24px"
-                    fill="#ff0000">
-                    <path
-                      d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
-                  </svg>
-                </button>
               </div>
             </div>
 
@@ -524,20 +493,6 @@
                   <option value="Advanced">Advanced</option>
                 </select>
 
-                <button
-                  type="button"
-                  class="text-red-500 hover:text-red-700"
-                  onclick="removeLanguage(this)">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="24px"
-                    viewBox="0 -960 960 960"
-                    width="24px"
-                    fill="#ff0000">
-                    <path
-                      d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
-                  </svg>
-                </button>
               </div>
             </div>
 
@@ -589,20 +544,7 @@
                   name="hobbies[]"
                   placeholder="Reading"
                   class="border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
-                <button
-                  type="button"
-                  class="text-red-500 hover:text-red-700"
-                  onclick="removeHobby(this)">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="24px"
-                    viewBox="0 -960 960 960"
-                    width="24px"
-                    fill="#ff0000">
-                    <path
-                      d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
-                  </svg>
-                </button>
+                
               </div>
             </div>
 
@@ -703,20 +645,6 @@
                       class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
                   </div>
                 </div>
-                <button
-                  type="button"
-                  class="text-red-500 hover:text-red-700 mt-2"
-                  onclick="removeEducation(this)">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="24px"
-                    viewBox="0 -960 960 960"
-                    width="24px"
-                    fill="#ff0000">
-                    <path
-                      d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
-                  </svg>
-                </button>
               </div>
             </div>
 
@@ -826,20 +754,6 @@
                     class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500"></textarea>
                 </div>
 
-                <button
-                  type="button"
-                  class="text-red-500 hover:text-red-700 mt-2"
-                  onclick="removeJob(this)">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="24px"
-                    viewBox="0 -960 960 960"
-                    width="24px"
-                    fill="#ff0000">
-                    <path
-                      d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
-                  </svg>
-                </button>
               </div>
             </div>
 
@@ -909,20 +823,6 @@
                     class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500"
                     required />
                 </div>
-                <button
-                  type="button"
-                  class="text-red-500 hover:text-red-700 mt-2"
-                  onclick="removeCertification(this)">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="24px"
-                    viewBox="0 -960 960 960"
-                    width="24px"
-                    fill="#ff0000">
-                    <path
-                      d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
-                  </svg>
-                </button>
               </div>
             </div>
 
@@ -945,6 +845,7 @@
 
               <div class="mt-6">
                 <button
+                  onclick="slide()"
                   type="button"
                   class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none">
                   Get your CV
@@ -953,8 +854,59 @@
             </div>
           </form>
         </div>
+
+        <!-- get you cv -->
+
+       <div class="format p-8 bg-gray-50 w-4/5 hidden ">
+        <form id="certificationsForm" class="space-y-6">
+          <h2 class="text-2xl font-bold text-gray-700 mb-4">
+            CV Model
+          </h2>
+
+          <div class="flex justify-around">
+            <div>
+            <label>
+              <input type="radio" name="sector" value="Classic" onclick="showClassicCV()"> Classic CV
+              
+            </label>
+
+          </div>
+          
+          <div>
+            <label>
+              <input type="radio" name="sector" value="Modern" onclick="showModernCV()"> Modern CV
+            </label>
+          </div>
+          </div>
+
+          <div class="flex justify-between">
+            <div class="mt-6">
+              <button
+                type="button"
+                onclick="reSlide()"
+                class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none">
+                previous
+              </button>
+            </div>
+
+            <div class="mt-6">
+              <button
+                type="button"
+                class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none">
+                show your CV
+              </button>
+            </div>
+          </div>
+
       </div>
+      </div>
+
+       
+
+     
     </section>
+
+   
 
     <script src="./dev.Js"></script>
   </body>

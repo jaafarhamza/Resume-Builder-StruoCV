@@ -46,15 +46,6 @@ function addSocialMedia() {
           <label class="block text-sm font-medium text-gray-700">Social Media Link</label>
           <input type="url" name="socialMediaLink[]" placeholder="https://linkedin.com/in/username" class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" required>
         </div>
-        <button type="button" class="text-red-500 hover:text-red-700" onclick="removeSocialMedia(this)"><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="24px"
-                    viewBox="0 -960 960 960"
-                    width="24px"
-                    fill="#ff0000">
-                    <path
-                      d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
-                  </svg></button>
       `;
 
   div.appendChild(addDiv);
@@ -371,37 +362,179 @@ format[count].style.display = 'block';
 step[count].style.backgroundColor = 'orange';
 
 function slide() {
-  // validation de champs
-  if (validation()) {
+  // validation de champs name phone
+  validationName();
+  validationPhone();
+  validateEmail();
+  validateLink();
+
+  if (
+    validationName() &&
+    validationPhone() &&
+    validateEmail() &&
+    validateLink()
+  ) {
     format[count].style.display = 'none';
-    step[count].style.backgroundColor = '#3b82f6';
 
     count++;
+
     format[count].style.display = 'block';
     step[count].style.backgroundColor = 'orange';
-  } else {
-    alert('invalid input!');
   }
+  
 }
 
 //  previous slide
 function reSlide() {
-  if (count > 0) {
-    format[count].style.display = 'none';
-    step[count].style.backgroundColor = '#3b82f6';
+  format[count].style.display = 'none';
+  count--;
+  format[count].style.display = 'block';
+  step[count].style.backgroundColor = 'orange';
+  step[count + 1].style.backgroundColor = '';
+}
 
-    count--;
+// Validation
+function validationName() {
+  let name = document.getElementById('name');
+  let errorName = document.getElementById('errorInputName');
+  let namevalide = name ? name.value.trim() : '';
+  let nameRegex = /^[A-Za-z\s]+$/;
 
-    format[count].style.display = 'block';
-    step[count].style.backgroundColor = 'orange';
+  if (nameRegex.test(namevalide)) {
+    name.style.border = '';
+    errorName.style.display = 'none';
+    return true;
+  } else {
+    name.style.border = '1px solid red';
+    errorName.style.display = 'block';
+    return false;
   }
 }
 
-// Validation 
-function validation() {
-  let name = document.getElementById('name');
-  let namevalide = name ? name.value.trim() : ''; 
-  let nameRegex = /^[A-Za-z\s]+$/; 
+function validationPhone() {
+  let phone = document.getElementById('phone');
+  let errorPhone = document.getElementById('errorInputPhone');
 
-  return nameRegex.test(namevalide);
+  let phonevalide = phone ? phone.value.trim() : '';
+  let phoneRegex =
+    /^(\+?(\d{1,3})[-\s.]?)?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/;
+  if (phoneRegex.test(phonevalide)) {
+    phone.style.border = '';
+    errorPhone.style.display = 'none';
+    return true;
+  } else {
+    phone.style.border = '1px solid red';
+    errorPhone.style.display = 'block';
+    return false;
+  }
 }
+
+// regex email
+function validateEmail() {
+  let email = document.getElementById('email');
+  let errorEmail = document.getElementById('errorInputEmail');
+
+  let emailvalide = email ? email.value.trim() : '';
+  let emailRegex = /^[\w.]+@[\w.]+\.[a-zA-Z]{2,4}$/;
+
+  if (emailvalide === '') {
+    clearErrorEmail();
+    return true;
+  }
+  if (emailRegex.test(emailvalide)) {
+    clearErrorEmail();
+    return true;
+  } else {
+    email.style.border = '1px solid red';
+    errorEmail.style.display = 'block';
+    return false;
+  }
+}
+
+// clear error email
+function clearErrorEmail() {
+  let errorEmail = document.getElementById('errorInputEmail');
+  let email = document.getElementById('email');
+  email.style.border = '';
+  errorEmail.style.display = 'none';
+}
+
+//regex link
+
+
+function validateLink() {
+  let socialMediaName = document.getElementById('socialMediaName');
+  let errorLinkName = document.getElementById('errorLinkName');
+  let link = document.getElementById('link');
+  let errorInputLink = document.getElementById('errorInputLink');
+
+  let socialMediaNameValide = socialMediaName ? socialMediaName.value.trim() : '';
+  let linkValide = link ? link.value.trim() : '';
+
+  let linkRegex = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
+  let socialMediaNameRegex = /^[A-Za-z\s]+$/;
+
+  if (socialMediaNameValide === '' && linkValide === '' ) {
+    clearErrors();
+    return true;
+  }
+
+  if (socialMediaNameRegex.test(socialMediaNameValide) && linkRegex.test(linkValide)) {
+    clearErrors();
+    return true;
+  }
+
+  
+  if (socialMediaNameValide === '' || linkValide === '') {
+    if (socialMediaNameValide === '') {
+      showError(socialMediaName, errorLinkName);
+    } else {
+      clearError(socialMediaName, errorLinkName);
+    }
+
+    if (linkValide === '') {
+      showError(link, errorInputLink);
+    } else {
+      clearError(link, errorInputLink);
+    }
+
+    return false;
+  }
+  
+  if (!socialMediaNameRegex.test(socialMediaNameValide)) {
+    showError(socialMediaName, errorLinkName);
+  } else {
+    clearError(socialMediaName, errorLinkName);
+  }
+
+  if (!linkRegex.test(linkValide)) {
+    showError(link, errorInputLink);
+  } else {
+    clearError(link, errorInputLink);
+  }
+
+  return false;
+}
+
+function showError(input, error) {
+  input.style.border = '1px solid red'; 
+  error.style.display = 'block'; 
+}
+
+// clear error link
+
+function clearError(input, error) {
+  input.style.border = 'none'; 
+  error.style.display = 'none'; 
+}
+function clearErrors() {
+  clearError(document.getElementById('socialMediaName'), document.getElementById('errorLinkName'));
+  clearError(document.getElementById('link'), document.getElementById('errorInputLink'));
+}
+
+// remove social media
+
+
+
+  
+
