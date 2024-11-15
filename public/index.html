@@ -4,13 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./css/tailwind.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
     <title>Builder-StruCv</title>
   </head>
 
   <body
     class="bg-[rgb(2,0,36)] bg-[linear-gradient(90deg,_rgba(2,0,36,1)_0%,_rgba(33,68,148,1)_100%,_rgba(0,212,255,1)_100%)]">
     <!-- nav -->
-    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <nav class="border-gray-200 dark:bg-gray-900">
       <div
         class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a
@@ -25,7 +27,7 @@
         <button
           id="toggle"
           type="button"
-          class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 "
           aria-controls="navbar-default"
           aria-expanded="false">
           <span class="sr-only"> menu</span>
@@ -44,11 +46,11 @@
 
         <div class="hidden w-full md:block md:w-auto" id="navbar">
           <ul
-            class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
               <a
                 href="./index.html"
-                class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+                class=" block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-blue-500 hover:text-blue-700"
                 aria-current="page"
                 >Home</a
               >
@@ -56,28 +58,28 @@
             <li>
               <a
                 href="#"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="md:text-white block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >About</a
               >
             </li>
             <li>
               <a
                 href="#"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="md:text-white block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >Services</a
               >
             </li>
             <li>
               <a
                 href="#"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="md:text-white block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >Pricing</a
               >
             </li>
             <li>
               <a
                 href="#"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="md:text-white block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >Contact</a
               >
             </li>
@@ -103,19 +105,19 @@
       class="flex items-center mt-28 justify-between gap-10 flex-wrap sm:justify-center sm:items-center mb-20">
       <!-- progress -->
 
-      <div class="flex items-center justify-start ml-10">
+      <div class="flex self-start justify-center mt-5">
         <div class="flex flex-col items-start space-y-6">
           <!-- Step 1 -->
-          <div  class="flex items-center space-x-3 cursor-pointer">
+          <div class="flex items-center space-x-3 cursor-pointer">
             <div class="relative">
-              <div 
+              <div
                 class="step flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
                 1
               </div>
               <div
                 class="absolute top-8 left-4 w-px h-8 bg-dotted border-l-2 border-gray-300"></div>
             </div>
-            <span class=" text-white font-medium"
+            <span class="text-white font-medium"
               >Informations personnelles</span
             >
           </div>
@@ -132,7 +134,7 @@
             <span class="text-white font-medium">Détails professionnels</span>
           </div>
           <!-- Step 3 -->
-          <div  class="flex items-center space-x-3 cursor-pointer">
+          <div class="flex items-center space-x-3 cursor-pointer">
             <div class="relative">
               <div
                 class="step flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
@@ -146,7 +148,7 @@
             >
           </div>
           <!-- Step 4 -->
-          <div  class="flex items-center space-x-3 cursor-pointer">
+          <div class="flex items-center space-x-3 cursor-pointer">
             <div class="relative">
               <div
                 class="step flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
@@ -197,9 +199,9 @@
             >
           </div>
           <!-- step 8 -->
-          <div id="step" class="flex items-center space-x-3 cursor-pointer">
+          <div id="" class="flex items-center space-x-3 cursor-pointer">
             <div
-              class="step flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
+              class=" flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-semibold">
               8
             </div>
             <span class="text-white font-medium">Certifications</span>
@@ -225,14 +227,15 @@
                   >Full Name</label
                 >
                 <input
-                id="name"
+                  id="name"
                   type="text"
                   name="fullName"
                   placeholder="full name"
-                  class="mt-1 border border-gray-300 rounded-lg p-2 focus:outline-none focus:border-blue-500" />
-                  <p id="errorInputName" class="text-red-500 text-sm hidden">Please fill in a valid name.</p>
+                  class="name mt-1 border border-gray-300 rounded-lg p-2 focus:outline-none focus:border-blue-500" />
+                <p id="errorInputName" class="text-red-500 text-sm hidden">
+                  Please fill in a valid name.
+                </p>
               </div>
-              
 
               <div class="flex justify-center items-center gap-7">
                 <label class="block text-sm font-medium text-gray-700"
@@ -262,12 +265,14 @@
                 >Email</label
               >
               <input
-              id="email"
+                id="email"
                 type="email"
                 name="email"
                 placeholder="user@example.com"
                 class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
-                <p id="errorInputEmail" class="text-red-500 text-sm hidden">Please fill in a valid Email.</p>
+              <p id="errorInputEmail" class="text-red-500 text-sm hidden">
+                Please fill in a valid Email.
+              </p>
             </div>
 
             <div>
@@ -275,12 +280,14 @@
                 >Phone</label
               >
               <input
-              id="phone"
+                id="phone"
                 type="tel"
                 name="phone"
                 placeholder="+123 456 7890"
                 class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
-                <p id="errorInputPhone" class="text-red-500 text-sm hidden">Please fill in a valid phone.</p>
+              <p id="errorInputPhone" class="text-red-500 text-sm hidden">
+                Please fill in a valid phone.
+              </p>
             </div>
 
             <div>
@@ -288,6 +295,7 @@
                 >Address</label
               >
               <input
+                id="address"
                 type="text"
                 name="address"
                 placeholder="123 St, City, Country"
@@ -304,26 +312,29 @@
                     >Social Media Name</label
                   >
                   <input
-                  id="socialMediaName"
+                    id="socialMediaName"
                     type="text"
                     name="socialMediaName[]"
                     placeholder="LinkedIn"
-                    class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
-                    <p id="errorLinkName" class="text-red-500 text-sm hidden">Please Saisie Email name.</p>
+                    class="socialMediaName mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+                  <p id="errorLinkName" class="text-red-500 text-sm hidden">
+                    Please Saisie Email name.
+                  </p>
                 </div>
                 <div>
                   <label class="block text-sm font-medium text-gray-700"
                     >Social Media Link</label
                   >
                   <input
-                  id="link"
+                    id="link"
                     type="url"
                     name="socialMediaLink[]"
                     placeholder="https://linkedin.com/in/username"
-                    class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
-                    <p id="errorInputLink" class="text-red-500 text-sm hidden">Please fill in a valid Link.</p>
+                    class="link mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
+                  <p id="errorInputLink" class="text-red-500 text-sm hidden">
+                    Please fill in a valid Link.
+                  </p>
                 </div>
-                
               </div>
             </div>
 
@@ -358,6 +369,7 @@
                 >Job Title</label
               >
               <input
+                id="jobTitle"
                 type="text"
                 name="jobTitle"
                 placeholder="dev full stack"
@@ -370,6 +382,7 @@
                 >Profile</label
               >
               <textarea
+                id="profile"
                 name="profile"
                 placeholder="Brief summary of your professional experience and skills..."
                 rows="4"
@@ -492,7 +505,6 @@
                   <option value="Intermediate">Intermediate</option>
                   <option value="Advanced">Advanced</option>
                 </select>
-
               </div>
             </div>
 
@@ -544,7 +556,6 @@
                   name="hobbies[]"
                   placeholder="Reading"
                   class="border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" />
-                
               </div>
             </div>
 
@@ -753,7 +764,6 @@
                     rows="3"
                     class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500"></textarea>
                 </div>
-
               </div>
             </div>
 
@@ -847,7 +857,7 @@
                 <button
                   onclick="slide()"
                   type="button"
-                  class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none">
+                  class="GetYourCV w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none">
                   Get your CV
                 </button>
               </div>
@@ -857,57 +867,79 @@
 
         <!-- get you cv -->
 
-       <div class="format p-8 bg-gray-50 w-4/5 hidden ">
-        <form id="certificationsForm" class="space-y-6">
-          <h2 class="text-2xl font-bold text-gray-700 mb-4">
-            CV Model
-          </h2>
-
-          <div class="flex justify-around">
-            <div>
-            <label>
-              <input type="radio" name="sector" value="Classic" onclick="showClassicCV()"> Classic CV
-              
-            </label>
-
-          </div>
-          
-          <div>
-            <label>
-              <input type="radio" name="sector" value="Modern" onclick="showModernCV()"> Modern CV
-            </label>
-          </div>
-          </div>
-
-          <div class="flex justify-between">
-            <div class="mt-6">
-              <button
-                type="button"
-                onclick="reSlide()"
-                class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none">
-                previous
-              </button>
+        <div class="format p-8 bg-gray-50 w-4/5 hidden">
+          <form id="certificationsForm" class="space-y-6">
+            <div class="flex justify-center flex-col items-center">
+              <h1
+                class="text-5xl font-bold text-gray-700 mb-4 flex justify-center">
+                CV Model
+              </h1>
+              <p>Please select your CV model favorite</p>
             </div>
 
-            <div class="mt-6">
-              <button
-                type="button"
-                class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none">
-                show your CV
-              </button>
+            <div class="flex justify-around">
+              <div class="">
+                <label class="cursor-pointer grid place-items-center">
+                  <img
+                    class="w-52 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out"
+                    src="./classic.png"
+                    alt="classic cv" />
+                  <input
+                    class="hidden"
+                    type="radio"
+                    name="sector"
+                    value="Classic"
+                    onclick="showClassicCV()" /><span
+                    class="text-blue-800 font-bold"
+                    >Classic CV</span
+                  >
+                </label>
+              </div>
+
+              <div>
+                <label class="cursor-pointer grid place-items-center">
+                  <img
+                    class="w-52 h-[319px] rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out"
+                    src="./cv_landing.png"
+                    alt="modrn cv " />
+                  <input
+                    class="hidden"
+                    type="radio"
+                    name="sector"
+                    value="Modern"
+                    onclick="showModernCV()" /><span
+                    class="text-blue-800 font-bold"
+                    >Modern CV</span
+                  >
+                </label>
+              </div>
             </div>
-          </div>
 
+            <div class="flex justify-center">
+              <div class="mt-6 flex justify-center">
+                <button
+                  type="button"
+                  onclick="reSlide()"
+                  class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none flex justify-center">
+                  Previous
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
-      </div>
 
-       
-
-     
     </section>
 
-   
+    <Section class=" flex justify-center items-center">
+      <div id="cv" class="cv bg-gray-50 rounded-2xl shadow-2xl shadow-blue-600 flex justify-center w-full sm:w-3/4 ">
+
+        </div>
+    </Section>
+
+
 
     <script src="./dev.Js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
   </body>
 </html>

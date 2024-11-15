@@ -40,11 +40,11 @@ function addSocialMedia() {
   addDiv.innerHTML = `
         <div>
           <label class="block text-sm font-medium text-gray-700">Social Media Name</label>
-          <input type="text" name="socialMediaName[]" placeholder="LinkedIn" class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" required>
+          <input type="text" name="socialMediaName[]" placeholder="LinkedIn" class="socialMediaName mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" required>
         </div>
         <div>
           <label class="block text-sm font-medium text-gray-700">Social Media Link</label>
-          <input type="url" name="socialMediaLink[]" placeholder="https://linkedin.com/in/username" class="mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" required>
+          <input type="url" name="socialMediaLink[]" placeholder="https://linkedin.com/in/username" class="link mt-1 border border-gray-300 rounded-lg w-full p-2 focus:outline-none focus:border-blue-500" required>
         </div>
       `;
 
@@ -381,7 +381,6 @@ function slide() {
     format[count].style.display = 'block';
     step[count].style.backgroundColor = 'orange';
   }
-  
 }
 
 //  previous slide
@@ -461,30 +460,34 @@ function clearErrorEmail() {
 
 //regex link
 
-
 function validateLink() {
   let socialMediaName = document.getElementById('socialMediaName');
   let errorLinkName = document.getElementById('errorLinkName');
   let link = document.getElementById('link');
   let errorInputLink = document.getElementById('errorInputLink');
 
-  let socialMediaNameValide = socialMediaName ? socialMediaName.value.trim() : '';
+  let socialMediaNameValide = socialMediaName
+    ? socialMediaName.value.trim()
+    : '';
   let linkValide = link ? link.value.trim() : '';
 
-  let linkRegex = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
+  let linkRegex =
+    /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
   let socialMediaNameRegex = /^[A-Za-z\s]+$/;
 
-  if (socialMediaNameValide === '' && linkValide === '' ) {
+  if (socialMediaNameValide === '' && linkValide === '') {
     clearErrors();
     return true;
   }
 
-  if (socialMediaNameRegex.test(socialMediaNameValide) && linkRegex.test(linkValide)) {
+  if (
+    socialMediaNameRegex.test(socialMediaNameValide) &&
+    linkRegex.test(linkValide)
+  ) {
     clearErrors();
     return true;
   }
 
-  
   if (socialMediaNameValide === '' || linkValide === '') {
     if (socialMediaNameValide === '') {
       showError(socialMediaName, errorLinkName);
@@ -500,7 +503,7 @@ function validateLink() {
 
     return false;
   }
-  
+
   if (!socialMediaNameRegex.test(socialMediaNameValide)) {
     showError(socialMediaName, errorLinkName);
   } else {
@@ -517,24 +520,151 @@ function validateLink() {
 }
 
 function showError(input, error) {
-  input.style.border = '1px solid red'; 
-  error.style.display = 'block'; 
+  input.style.border = '1px solid red';
+  error.style.display = 'block';
 }
 
 // clear error link
 
 function clearError(input, error) {
-  input.style.border = 'none'; 
-  error.style.display = 'none'; 
+  input.style.border = 'none';
+  error.style.display = 'none';
 }
 function clearErrors() {
-  clearError(document.getElementById('socialMediaName'), document.getElementById('errorLinkName'));
-  clearError(document.getElementById('link'), document.getElementById('errorInputLink'));
+  clearError(
+    document.getElementById('socialMediaName'),
+    document.getElementById('errorLinkName')
+  );
+  clearError(
+    document.getElementById('link'),
+    document.getElementById('errorInputLink')
+  );
 }
 
-// remove social media
+// recuperration de donnees
 
+// function showCv(){
 
+// }
 
+document.querySelector('.GetYourCV').addEventListener('click', () => {
+  let name = document.getElementById('name').value.trim();
+  let email = document.getElementById('email').value.trim();
+  let phone = document.getElementById('phone').value.trim();
+  let address = document.getElementById('address').value.trim();
+  let jobTitle = document.getElementById('jobTitle').value.trim();
+  let profile = document.getElementById('profile').value.trim();
+
+  // more social media
   
+  let socialMediaNames = document.querySelectorAll('.socialMediaName');
+let links = document.querySelectorAll('.link');
 
+
+let moreSocialMedia = [];
+let moreLink = [];
+
+
+socialMediaNames.forEach((nameInput) => {
+  moreSocialMedia.push(nameInput.value.trim());
+});
+
+links.forEach((linkInput) => {
+  moreLink.push(linkInput.value.trim());
+});
+
+
+  // let socialMediaName = document.querySelector('.socialMediaName').value;
+  // let link = document.querySelector('.link').value;
+
+
+  document.getElementById('cv').innerHTML = `
+  <div class="bg-gray-100 font-sans leading-relaxed">
+
+  <!-- Main CV Container -->
+  <div class="max-w-3xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden mt-10 mb-10 p-8">
+
+    <!-- Header - Personal Information -->
+    <header class="text-center border-b border-gray-200 pb-6 flex items-center justify-between ">
+      <div class="gap-2 grid">
+      <h1 class="text-4xl font-bold text-gray-800">${name}</h1>
+      <p class="flex items-start text-lg text-gray-600">${jobTitle}</p>
+      </div>
+      <div class="mt-2 text-gray-500">
+        <p>Email: ${email}</p>
+        <p>Phone: ${phone}</p>
+        <p>Location: ${address}</p>
+      </div>
+    </header>
+
+    <!-- Profile Summary Section -->
+    <section class="">
+      <div class="list-disc list-inside mt-4 space-y-1 text-gray-700 grid grid-cols-2 ">
+      <p> <span class="font-semibold">${socialMediaNames}:</span>  ${links}</p>
+      </div>
+      <h2 class="text-xl font-semibold text-gray-800 border-b border-gray-200 pb-2">Profile Summary</h2>
+      <p class="mt-4 text-gray-700">
+        ${profile}
+      </p>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section class="mt-8">
+      <h2 class="text-xl font-semibold text-gray-800 border-b border-gray-200 pb-2">Work Experience</h2>
+      <div class="mt-4 space-y-6">
+        <article>
+          <h3 class="text-lg font-bold text-gray-800">Software Engineer</h3>
+          <p class="text-sm text-gray-600">Example Corp | 2019 - Present</p>
+          <p class="mt-2 text-gray-700">Developed full-stack web applications in an agile environment, collaborated with designers and project managers to deliver optimized, user-friendly solutions.</p>
+        </article>
+        <article>
+          <h3 class="text-lg font-bold text-gray-800">Junior Developer</h3>
+          <p class="text-sm text-gray-600">Another Company | 2017 - 2019</p>
+          <p class="mt-2 text-gray-700">Assisted in various projects, focusing on both frontend and backend tasks, and gained experience in team collaboration and client communication.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="mt-8">
+      <h2 class="text-xl font-semibold text-gray-800 border-b border-gray-200 pb-2">Education</h2>
+      <div class="mt-4">
+        <h3 class="text-lg font-bold text-gray-800">Bachelor of Science in Computer Science</h3>
+        <p class="text-sm text-gray-600">XYZ University | 2013 - 2017</p>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="mt-8">
+      <h2 class="text-xl font-semibold text-gray-800 border-b border-gray-200 pb-2">Skills</h2>
+      <ul class="list-disc list-inside mt-4 space-y-1 text-gray-700 grid grid-cols-3">
+        <li>JavaScript</li>
+        <li>React & Node.js</li>
+        <li>Python & Django</li>
+        <li>Project Management</li>
+      </ul>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="mt-8">
+      <h2 class="text-xl font-semibold text-gray-800 border-b border-gray-200 pb-2">Certifications</h2>
+      <ul class="list-disc list-inside mt-4 space-y-1 text-gray-700 grid grid-cols-2">
+        <li>AWS Certified Solutions Architect</li>
+        <li>Google Analytics Certification</li>
+      </ul>
+    </section>
+
+    <!-- Languages Section -->
+    <section class="mt-8">
+      <h2 class="text-xl font-semibold text-gray-800 border-b border-gray-200 pb-2">Languages</h2>
+      <ul class="list-disc list-inside mt-4 space-y-1 text-gray-700 grid grid-cols-2">
+        <li>English - Fluent</li>
+        <li>Spanish - Intermediate</li>
+      </ul>
+    </section>
+
+  </div>
+
+</div>
+  `;
+});
