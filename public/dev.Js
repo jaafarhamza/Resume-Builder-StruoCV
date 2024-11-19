@@ -557,25 +557,11 @@ document.querySelector('.GetYourCV').addEventListener('click', () => {
 
   // more social media
   
-  let socialMediaNames = document.querySelectorAll('.socialMediaName');
-let links = document.querySelectorAll('.link');
+ 
 
 
-let moreSocialMedia = [];
-let moreLink = [];
-
-
-socialMediaNames.forEach((nameInput) => {
-  moreSocialMedia.push(nameInput.value.trim());
-});
-
-links.forEach((linkInput) => {
-  moreLink.push(linkInput.value.trim());
-});
-
-
-  // let socialMediaName = document.querySelector('.socialMediaName').value;
-  // let link = document.querySelector('.link').value;
+  let socialMediaName = document.querySelector('.socialMediaName').value;
+  let link = document.querySelector('.link').value;
 
 
   document.getElementById('cv').innerHTML = `
